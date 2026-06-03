@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#details">Details</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#count">Countdown</a>
+  </nav>
+
+  <section class="section hero" id="home">
+    <div class="card show">
+      <p class="top-text">Wedding Invitation</p>
+      <h1>You Are Invited</h1>
+      <h2>Islom Jon & Shohistahon</h2>
+      <p class="message">
+        저희의 소중한 결혼식을 함께 축하해 주시길 바랍니다.
+        여러분의 참석은 저희에게 더욱 뜻깊고 행복한 순간이 될 것입니다.
+      </p>
+      <a href="#details" class="btn">자세히 보기</a>
+    </div>
+  </section>
+
+  <section class="section details-section" id="details">
+    <div class="card">
+      <h1>Wedding Details</h1>
+
+      <div class="details">
+        <p><strong>Date</strong> 2026년 6월 20일 토요일</p>
+        <p><strong>Time:</strong> 11:00 AM</p>
+        <p><strong>Venue:</strong> ASR Wedding Hall</p>
+        <p><strong>Address:</strong> FPJC+PPJ, Margilan, Fergana Region, Uzbekistan</p>
+      </div>
+
+      <a href="https://www.google.com/maps/place/ASR+to%E2%80%98yxonasi/@40.4820286,71.7218823,17.98z/data=!4m6!3m5!1s0x38bb77553f4bcfe7:0x6c7e981b47322ca!8m2!3d40.4818447!4d71.7217806!16s%2Fg%2F11n__wz16s?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">Open Map <br> 지도</a>
+    </div>
+  </section>
+
+  <section class="section gallery-section" id="gallery">
+    <div class="card-images">
+      <h1>Memories</h1>
+
+      <div class="gallery-images">
+        <img src="./images/groom bride.png" alt="">
+        <img src="./images/3rd.png" alt="">
+        <img src="images/2rd photo.png" alt="">
+      </div>
+
+      <p class="footer">부디 함께 자리해 주시면 진심으로 감사하겠습니다. ❤️</p>
+    </div>
+  </section>
+
+  <section class="section" id="count">
+    <div class="card">
+      <h1>남은 시간</h1>
+      <div id="countdown"></div>
+    </div>
+  </section>
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+
+    function showCards() {
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if (cardTop < window.innerHeight - 100) {
+          card.classList.add("show");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", showCards);
+    showCards();
+
+    const weddingDate = new Date("June 20, 2026 11:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `
+        <h2>${days} 일</h2>
+        <p>${hours}h ${minutes}m ${seconds}s</p>
+      `;
+    }, 1000);
+  </script>
+
+</body>
+</html>

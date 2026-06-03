@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(135deg, #fff7f0, #f4e1d2);
+  color: #3b2f2f;
+}
+
+/* NAVBAR */
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 18px 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  color: #8a6246;
+  margin: 0 18px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* SECTIONS */
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+/* CARD */
+
+.card {
+  background: white;
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.card-images {
+  background: white;
+  width: 100%;
+  max-width: 1400px;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+  opacity: 1;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.gallery-images img {
+  width: 300px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXT */
+
+.top-text {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 38px;
+  color: #8a6246;
+  margin-bottom: 30px;
+}
+
+.message {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.details {
+  font-size: 20px;
+  line-height: 2;
+  margin: 30px 0;
+}
+
+/* BUTTON */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #8a6246;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 40px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #6d4a33;
+  transform: translateY(-3px);
+}
+
+/* GALLERY */
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 30px;
+  font-size: 18px;
+  color: black;
+}
+
+/* COUNTDOWN */
+
+#countdown {
+  margin-top: 20px;
+}
+
+#countdown h2 {
+  font-size: 50px;
+  color: #8a6246;
+  margin-bottom: 10px;
+}
+
+#countdown p {
+  font-size: 24px;
+  color: #3b2f2f;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 5px;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 90px 15px;
+  }
+
+  .card {
+    padding: 35px 20px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .message,
+  .details {
+    font-size: 17px;
+  }
+
+  .gallery img {
+    width: 150px;
+    height: 200px;
+  }
+
+  #countdown h2 {
+    font-size: 36px;
+  }
+
+  #countdown p {
+    font-size: 20px;
+  }
+}
